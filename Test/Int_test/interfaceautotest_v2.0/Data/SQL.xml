@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<page>
+	<database name="集成一">
+		<table name="test1">
+			<sql id="测试">
+				select * from t_tn_online_bind_flow a where a.account_no = '%s'
+			</sql>
+			<sql id="测试2">
+				select * from  t_c_at_loaninfo a where a.contract_no = '%s'
+			</sql>
+		</table>
+	</database>
+		<database name="LOAN2DB">
+		<table name="LA_T_REDUCTION">
+			<sql id="COLL_LIST_NO">
+				select * from LA_T_REDUCTION t where COLL_LIST_NO = '%s' and CONTRACT_ID = '%s'
+			</sql>
+		</table>
+	</database>
+
+	<database name="CORE2DB">
+		<table name="t_c_at_loaninfo">
+			<sql id="CONTRACT_NO">
+				select * from t_c_at_loaninfo t where t.CONTRACT_NO = '%s'
+			</sql>
+		</table>
+		<table name="t_c_ln_reducereg">
+			<sql id="CONTRACT_NO">
+				select * from t_c_ln_reducereg  t where t.CONTRACT_NO = '%s' and REDUCE_OVERDUE_BASE = '%s' and REDUCE_OVERDUE_INST = '%s' and REDUCE_DEFAULT = '%s' and REDUCE_PENALTY = '%s'
+			</sql>
+		</table>
+		<table name="t_c_cd_repay_reg">
+			<sql id="CREDIT_ID">
+				select * from t_c_cd_repay_reg t where t.CREDIT_ID = '%s' and REQ_SN = '%s'
+			</sql>
+		</table>
+	</database>
+</page>
