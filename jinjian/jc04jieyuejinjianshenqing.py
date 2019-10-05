@@ -28,8 +28,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import Select
 
-#loanjc="http://172.18.100.141:9083/loan/user/home"
-loanjc="http://dkjc4.jieyuechina.com/loan/user/home"
+
+# loanjc="http://dkjc4.jieyuechina.com/loan/user/home"
+loanjc="http://dk.asset.jc4.jieyue.com/loan/user/home"
 xinshenjc="http://fintechjc4.jieyuechina.com/loan-credit"
 coreDB=getSQLResulthxjc04
 loanDBXG=getSQLResultloanxgjc04
@@ -62,7 +63,7 @@ def jineqixian(): #金额期限申请
             "telephone": mobile, #手机号
             "appAmount": "100000", #申请金额
             "appPeriod": "24", #申请期限
-            "custmerManger": "11059349",#客户经理 田世豪
+            "custmerManger": "11049136",#客户经理 11059349田世豪   11049136 黄源浩-进件   10022298-质检
             "position": "301000817", #位置
             "telemarketing": "0", #是否电销 是：1 否：0
             "transNo": "1901730089%d" % random.randint(00000000, 99999999),
@@ -90,7 +91,7 @@ def certification(): #实名认证
             "consultId": consultId, #咨询单号
             "cardUrlA": "group1/M00/08/0D/rBJkp1vBsueAJeBWAAIxovgaVjM426.jpg",
             "frontTransNo": "1901730089%d" % random.randint(00000000, 99999999),
-            "custmerManger": "11059349",
+            "custmerManger": "11049136",
             "cardEndT": "2018-05-22",
             "busiCode": "CSB37",
             "nation": "汉",
@@ -199,7 +200,7 @@ def wanshanfangchanxinxi(): #完善房产信息-1049
             "interfaceNo": "1049",
             "consultId": consultId,
             "frontTransNo": "1901730089%d" % random.randint(00000000, 99999999),
-            "custmerManger": "11059349",#客户经理 田世豪
+            "custmerManger": "11049136",#客户经理 田世豪
             "busiCode": "CSB49",
             "sysSource": "1",
             "custName": custName,
@@ -235,7 +236,7 @@ def wanshangerenxinxi(): #完善个人信息-1049
             "interfaceNo": "1049",
             "consultId": consultId,
             "frontTransNo": "1901730089%d" % random.randint(00000000, 99999999),
-            "custmerManger": "11059349",#客户经理 田世豪
+            "custmerManger": "11049136",#客户经理 田世豪
             "busiCode": "CSB49",
             "sysSource": "1",
             "custName": custName,
@@ -273,7 +274,7 @@ def wanshanlianxirenxinxi(): #完善联系人信息-1049
             "interfaceNo": "1049",
             "consultId": consultId,
             "frontTransNo": "1901730089%d" % random.randint(00000000, 99999999),
-            "custmerManger": "11059349",#客户经理 田世豪
+            "custmerManger": "11049136",#客户经理 田世豪
             "busiCode": "CSB49",
             "sysSource": "1",
             "custName": custName,
@@ -310,7 +311,7 @@ def wanshanyinhangkaxinxi(): #完善银行卡信息-1049
 	        "interfaceNo": "1049",
             "consultId": consultId,
             "frontTransNo": "20181013141732684",
-            "custmerManger": "11059349",
+            "custmerManger": "11049136",
             "busiCode": "CSB49",
             "lbtIntoInfoBankCard": [{
                 "accountName": custName,
@@ -412,7 +413,7 @@ def Crossqualityinspection():#交叉质检
         custName = getExcelData("custName", pid, "1118")  # 读取Excel列数
         custCode = getExcelData("custCode", pid, "1058")  # 读取Excel列数
         intoappid = getExcelData("intoappid", pid, "1058")  # 读取Excel列数
-        d = '11036813'  # 交叉质检-苗双伟
+        d = '10022298'  # 交叉质检-11036813-苗双伟   10022298-陈少萍-质检
         e = 'Cs654321'
         chromeOpitons = Options()
 
@@ -434,7 +435,7 @@ def Crossqualityinspection():#交叉质检
         driver.find_element_by_class_name("btn").click()
 
         time.sleep(3)
-        driver.find_element_by_xpath("//*[@id='firstMenu1']").click() #进件管理 queryEachCheckLbTIntoInfo
+        driver.find_element_by_xpath("//*[@id='firstMenu2']").click() #进件管理 queryEachCheckLbTIntoInfo
         time.sleep(2)
         driver.find_element_by_xpath("//span[text()=' 交叉质检']").click()
         time.sleep(2)
@@ -1428,9 +1429,9 @@ def jieyuedianziqianzhang():#借悦开户及电子签章接口
     daiqianyuehetongliebiao() #待签约合同列表-1056
     shoujidianziqianzhang() #手机电子签章-1057
 
-#jieyuejinjianjiekou() #借悦进件接口
-#Crossqualityinspection() #交叉质检-苗双伟
-Batchsubstitution() #管理员批量换人
+# jieyuejinjianjiekou() #借悦进件接口
+Crossqualityinspection() #交叉质检-苗双伟
+# Batchsubstitution() #管理员批量换人
 #Approvalofincomingpartsbudai() #进件审批--不带调查表
 #Examinationandapprovalofincomingparts() #进件审批复核
 #zhuguanfuhe() #信审审批-主管复核

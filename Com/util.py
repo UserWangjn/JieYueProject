@@ -136,7 +136,8 @@ def getInterfaceResloanseverjc03(interfaceNo, body):
     return res
 #借悦sever调用信贷集成4接口地址：
 def getInterfaceResloanseverjc04(interfaceNo, body):
-    url = "http://10.50.181.48:24007/loan-api-link/api/appbiz/LoanEasyRest/%d/v1"%interfaceNo #熟悉%d的用法，熟法
+    # url = "http://10.50.181.48:24007/loan-api-link/api/appbiz/LoanEasyRest/%d/v1"%interfaceNo #熟悉%d的用法，熟法
+    url = "http://loan-api-link.asset.jc4.jieyue.com/loan-api-link/api/appbiz/LoanEasyRest/%d/v1"%interfaceNo #熟悉%d的用法，熟法
     headers = {"Content-Type": "application/json"}  #报文头
     req = requests.post(url, data=json.dumps(body), headers=headers)    #requests.post  发送post请求方法  json.dumps  将 Python 对象编码成 JSON 字符串
     res = json.loads(req.content)   #json.loads 用于解码 JSON 数据。该函数返回 Python 字段的数据类型

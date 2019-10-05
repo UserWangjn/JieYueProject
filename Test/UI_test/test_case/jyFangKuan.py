@@ -14,7 +14,7 @@ class testFK(unittest.TestCase):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
-        self.base_url = "http://172.18.100.59:8080/core-web/user/caslogin"      #集成1环境
+        self.base_url = "http://172.18.100.123:8080/core-web/user/caslogin"      #集成1环境
         #self.base_url = "http://172.18.100.164:8080/core-web/user/caslogin"      #集成2环境
 
     #testcase测试开始、执行步骤（实现测试过程的代码）

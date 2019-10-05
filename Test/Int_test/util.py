@@ -79,6 +79,8 @@ def getExcelData(path,cellname, pid, sheetname):
     pid = str(pid)
     sheetname = str(sheetname)
     proDir = os.path.split(os.getcwd())[0]  #os.path.split()#把路径分割成dirname和basename，返回一个元组 os.getcwd() 方法用于返回当前工作目录
+    # print('proDir:',proDir)
+    print('getcwd:',os.getcwd())
     #dataPath = os.path.join(proDir, "../interface.xls")      #os.path.join    把目录和文件名合成一个路径
     dataPath = os.path.join(proDir, path)
     fd = xlrd.open_workbook(dataPath, formatting_info=True) #xlrd.open_workbook
@@ -130,8 +132,12 @@ def getExcelNrows(path,sheetname):
     print("nrows:%s"%sh.nrows)
     return sh.nrows #sh
 
+#生成一个随机的5位数
 def bank_num():
     list_num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     res = random.sample(list_num, 5)
     res = str(res[0]) + str(res[1]) + str(res[2]) + str(res[3]) + str(res[4])
     return res
+
+if __name__ == '__main__':
+    getExcelData('',',','','')
