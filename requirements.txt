@@ -13,7 +13,7 @@ reload==0.9
 request==0.0.26
 requests==2.18.4
 selenium==3.9.0
-urllib3==1.22
+urllib3==1.24.2
 watchdog==0.8.3
 xlrd==1.1.0
 xlutils==2.0.0
