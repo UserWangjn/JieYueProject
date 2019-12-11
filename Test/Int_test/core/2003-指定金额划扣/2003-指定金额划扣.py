@@ -5,6 +5,7 @@ interfaceNo = 2003
 for pid in range(1,getExcelNrows('../interface.xls',interfaceNo)):
     contractNo = getExcelData('../interface.xls',"合同号", pid, interfaceNo)
     print("合同号：%s"%contractNo)
+    # BodyData是字典类型
     BodyData = {
         "sysSource": "2",
         "frontTransNo": "as3z1898656%d"%random.randint(0,99999),

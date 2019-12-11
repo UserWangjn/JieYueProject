@@ -18,6 +18,7 @@ def getInterfaceRes(url,body):
     #url = "http://172.18.100.89:8082/core-interface/api/loan/2003/v1"     #%interfaceNo #熟悉%d的用法，熟悉其他字符串替换方法
     headers = {"Content-Type": "application/json"}  #报文头
     req = requests.post(url, data=json.dumps(body), headers=headers)    #requests.post  发送post请求方法  json.dumps  将 Python 对象编码成 JSON 字符串
+    # 本案例中是把body的字段转化为字符串后发送Post请求，把返回的字符串结果loads为Python数据类型继续方便做处理，比如字典，获得key、value
     res = json.loads(req.content)   #json.loads 用于解码 JSON 数据。该函数返回 Python 字段的数据类型
     return res
 def getInterfaceResjc05_2003(body):
@@ -137,7 +138,7 @@ def bank_num():
     list_num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     res = random.sample(list_num, 5)
     res = str(res[0]) + str(res[1]) + str(res[2]) + str(res[3]) + str(res[4])
-    return res
+    return int(res)
 
 if __name__ == '__main__':
     getExcelData('',',','','')

@@ -44,7 +44,7 @@ for pid in range(1,getExcelNrows('../interface.xls',interfaceNo)):
     print("pid:%s"%pid)
     setExcelData('../interface.xls',BodyData,"请求报文",pid,interfaceNo)
     print('写入请求报文成功')
-    rebody = getInterfaceRes('http://172.18.100.89:8082/core-interface/api/loan/2118/v1',BodyData)
+    rebody = getInterfaceRes('http://172.18.100.123:8082/core-interface/api/loan/2118/v1',BodyData)
     print("返回报文rebody:%s"%rebody)
     setExcelData('../interface.xls',rebody,"返回报文",pid,interfaceNo)
     print("写入返回报文成功")
