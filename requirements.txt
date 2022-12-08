@@ -1,5 +1,5 @@
 argh==0.26.2
-certifi==2018.1.18
+certifi==2022.12.7
 chardet==3.0.4
 cx-Oracle==6.1
 get==0.0.39
